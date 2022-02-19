@@ -1,4 +1,5 @@
 <h2><%= @list.name %></h2>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
     <li><%= bookmark.movie.title %>  <%= bookmark.comment %></li>
@@ -6,7 +7,6 @@
   <% end %>
 </ul>
 
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 
 <%= link_to "Back to lists", lists_path %>
 <%= link_to "Add bookmark", new_list_bookmark_path(@list) %>
